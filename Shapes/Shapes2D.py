@@ -227,19 +227,19 @@ class Vector:
         self._coords = [x, y]
 
     @property
-    def X(self):
+    def x(self):
         return self._coords[0]
 
-    @X.setter
-    def X(self, x):
+    @x.setter
+    def x(self, x):
         self._coords[0] = x
 
     @property
-    def Y(self):
+    def y(self):
         return self._coords[1]
 
-    @Y.setter
-    def Y(self, y):
+    @y.setter
+    def y(self, y):
         self._coords[1] = y
 
     def get(self):
@@ -271,7 +271,10 @@ class Vector:
         return self._coords[item]
 
     def cross(self, other):
-        return (self.X * other.Y) - (self.Y * other.X)
+        return (self.x * other.y) - (self.y * other.x)
+
+    def dot(self, other):
+        return sum(a*b for a, b in zip(self, other.get())) 
 
 
 if __name__ == '__main__':
